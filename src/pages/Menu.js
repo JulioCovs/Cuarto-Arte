@@ -1,17 +1,20 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Menu() {
+  const navigate = useNavigate();
+
   return (
-    <div className="container">
+    <div style={{ padding: "50px", position: "relative", zIndex: 1 }}>
       <h1>Menú Principal</h1>
 
-      <div className="grid">
-        <Link to="/clientes"><button className="card">Clientes</button></Link>
-        <Link to="/musicos"><button className="card">Músicos</button></Link>
-        <Link to="/eventos"><button className="card">Eventos</button></Link>
-        <Link to="/avisos"><button className="card">Avisos</button></Link>
-        <Link to="/pagos"><button className="card">Pagos</button></Link>
-        <Link to="/reportes"><button className="card">Reportes</button></Link>
+      <div style={{ display: "flex", gap: "20px", marginTop: "30px" }}>
+        <div className="card" onClick={() => navigate("/clientes")}>
+          Clientes
+        </div>
+
+        <div className="card" onClick={() => navigate("/eventos")}>
+          Eventos
+        </div>
       </div>
     </div>
   );

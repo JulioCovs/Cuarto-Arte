@@ -10,6 +10,8 @@ import Pagos from "./pages/Pagos";
 import Reportes from "./pages/Reportes";
 import Avisos from "./pages/Avisos";
 
+import Layout from "./components/Layout";
+
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -19,7 +21,7 @@ function App() {
         {!loggedIn ? (
           <Route path="*" element={<Login onLogin={() => setLoggedIn(true)} />} />
         ) : (
-          <>
+          <Route element={<Layout />}>
             <Route path="/" element={<Menu />} />
             <Route path="/clientes" element={<Clientes />} />
             <Route path="/musicos" element={<Musicos />} />
@@ -27,7 +29,7 @@ function App() {
             <Route path="/avisos" element={<Avisos />} />
             <Route path="/pagos" element={<Pagos />} />
             <Route path="/reportes" element={<Reportes />} />
-          </>
+          </Route>
         )}
       </Routes>
     </BrowserRouter>
