@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Login from "./pages/Login";
+import Loading from "./pages/Loading";
 import Menu from "./pages/Menu";
 import Clientes from "./pages/Clientes";
 import Musicos from "./pages/Musicos";
@@ -9,11 +10,19 @@ import Eventos from "./pages/Eventos";
 import Pagos from "./pages/Pagos";
 import Reportes from "./pages/Reportes";
 import Avisos from "./pages/Avisos";
-
 import Layout from "./components/Layout";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  if (loading) return <Loading />;
 
   return (
     <BrowserRouter>

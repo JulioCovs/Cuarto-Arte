@@ -1,19 +1,36 @@
 import { useNavigate } from "react-router-dom";
+import "../App.css";
 
 function Menu() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ padding: "50px", position: "relative", zIndex: 1 }}>
+    <div className="container">
       <h1>Menú Principal</h1>
 
-      <div style={{ display: "flex", gap: "20px", marginTop: "30px" }}>
+      <div className="grid">
         <div className="card" onClick={() => navigate("/clientes")}>
-          Clientes
+          Manejo de Clientes
+        </div>
+
+        <div className="card" onClick={() => navigate("/musicos")}>
+          Catálogo de Músicos
         </div>
 
         <div className="card" onClick={() => navigate("/eventos")}>
-          Eventos
+          Gestión de Eventos
+        </div>
+
+        <div className="card" onClick={() => navigate("/avisos")}>
+          Aviso de Eventos
+        </div>
+
+        <div className="card" onClick={() => navigate("/pagos")}>
+          Cobranza y Pagos
+        </div>
+
+        <div className="card" onClick={() => navigate("/reportes")}>
+          Reportes y Estadísticas
         </div>
       </div>
     </div>

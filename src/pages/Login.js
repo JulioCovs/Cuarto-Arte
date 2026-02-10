@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../App.css";
 
 function Login({ onLogin }) {
   const [user, setUser] = useState("");
@@ -13,27 +14,25 @@ function Login({ onLogin }) {
   };
 
   return (
-    <div className="container">
-      <h1>Cuarto Arte</h1>
-      <h2>Iniciar sesión</h2>
+    <div className="login-wrapper">
+      <div className="login-box">
+        <h1>CUARTO ARTE</h1>
+        <p>Iniciar sesión</p>
 
-      <input
-        type="text"
-        placeholder="Usuario"
-        onChange={(e) => setUser(e.target.value)}
-      />
+        <input
+          type="text"
+          placeholder="Usuario"
+          onChange={(e) => setUser(e.target.value)}
+        />
 
-      <br /><br />
+        <input
+          type="password"
+          placeholder="Contraseña"
+          onChange={(e) => setPass(e.target.value)}
+        />
 
-      <input
-        type="password"
-        placeholder="Contraseña"
-        onChange={(e) => setPass(e.target.value)}
-      />
-
-      <br /><br />
-
-      <button onClick={handleLogin}>Entrar</button>
+        <button onClick={handleLogin}>Entrar</button>
+      </div>
     </div>
   );
 }

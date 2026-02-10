@@ -1,40 +1,67 @@
+/* Contenedor general */
 .container {
   text-align: center;
-  padding: 20px;
+  padding: 40px;
 }
 
+/* Títulos */
+h1 {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Grid del menú */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 30px;
+  gap: 25px;
+  margin-top: 40px;
 }
 
+/* Cards estilo moderno */
 .card {
-  padding: 25px;
-  border-radius: 12px;
-  border: none;
-  background: #eee;
+  padding: 30px;
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(6px);
   cursor: pointer;
+
+  transition: 0.25s ease;
+  font-weight: 500;
 }
 
-.darkTheme {
-  background: #0f0f0f;
+/* Hover elegante */
+.card:hover {
+  transform: translateY(-6px);
+  border: 1px solid #D4AF37;
+  box-shadow: 0 12px 30px rgba(116, 113, 9, 0.739);
+}
+
+/* Inputs del login */
+input {
+  padding: 12px;
+  width: 250px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 10px;
+  outline: none;
+}
+
+/* Botones */
+button {
+  padding: 12px 25px;
+  border-radius: 8px;
+  border: none;
+  background: #D4AF37;
   color: white;
-  min-height: 100vh;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.lightTheme {
-  background: #ffffff;
-  color: black;
-  min-height: 100vh;
-}
-
-.background-lines {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(90deg, rgba(212,175,55,0.1) 1px, transparent 1px);
-  background-size: 80px 80px;
-  pointer-events: none;
+button:hover {
+  background: #665314c0;
 }
